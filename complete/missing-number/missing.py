@@ -38,7 +38,7 @@ def missing_number(nums, max_num):
 #             return i
 
 
-# #----------from HB SOLUTIONS-------# (ridiculous)
+# #----------from HB SOLUTIONS-------# 
 
     # 1st solution: Initial solution: keep track of what you've
     #               seen in a separate list

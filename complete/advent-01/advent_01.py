@@ -1,6 +1,6 @@
 """Complete first challenge for Advent Exercise"""
 
-## MEMORITE THIS ALGO!
+## MEMORIZE THIS ALGO!
 
 #can refactor this to take in target_num as a parameter and make more dynamic
 
