@@ -38,14 +38,16 @@ def deduped(items):
     """Return new list from items with duplicates removed."""
     
     deduped = []
+    seen = set()
 
     #if list isn't empty
     if not items:
         return items
-        #loop over list of items[1:] => [9, 7, 9, 2, 6, 0]
+    #loop over list of items[1:] => [9, 7, 9, 2, 6, 0]
     for item in items:
-
-        if item not in deduped: 
+        #lookup in a set instead of a list to cut runtime down from O(n^2) to O(n)
+        if item not in seen:
+            seen.add(item) 
             deduped.append(item)
     
     return deduped
