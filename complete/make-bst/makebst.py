@@ -151,61 +151,24 @@ def make_bst(nums):
 
     Returns the root node of a new BST that is valid and balanced.
     """
-    BinaryNode
+    if not nums:
+        return None
 
-    #get length of list
-    if len(nums) % 2 != 0:
-        data = round(len(nums)/2)
-        BinaryNode(data)
-    else:
-        data = int(len(nums)/2) + 1
-        BinaryNode(data)
-    
-    root = self.data 
-    
+    # Find midpoint
+    mid_index = len(nums) // 2 # [1, 2, 3, 4, 5, 6, 7] = 3
+
+    # Make new node out of midpoint
+    root = BinaryNode(nums[mid_index]) #root is BinaryNode(nums[3]), BinaryNode(4)
+    #print(f'root = {root.data}')
+
+    # Recursively find new left- and right-hand nodes
+    root.left = make_bst(nums[:mid_index]) #root.left = make_bst(nums[:3]) = make_bst([1, 2, 3])
+    root.right = make_bst(nums[mid_index + 1:]) #root.right = make_bst(nums[4:])  = make_bst ([4, 5, 6, 7])
+
+    #print(f'root.left = {root.left.data}')
+    #print(f'root.right = {root.right.data}')
+
     return root
-    #if length is odd, self.data = middle num round(len/2)  => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] = round(len/2)
-        # self.data = 4 = nums[3] = int(len/2)
-        #while self.left < len(nums):  
-           # self.left.left =  
-        #if len(nums) > 3? :
-        # self.left.data = self.data - 2  
-
-        # self.right.data = self.data + 2
-     
-     #while there still nums in the list, add whatevers greater than data (4) to self.data.right and less than to self.data.left
-    
-    
-    # self.data = round(len(nums)/2)
-
-    # while self.left.data => 2: 
-    #     self.left.data = self.data - 2
-    #     self.right.data = self.data + 1
-    # self.left.data = self.data - 1
-    # self.right.data = self.data + 1
-
-    # while self.right.data <= len(nums) - 1:
-    #     self.right.data = self.data + 2
-    #     self.left.data = self.data - 1
-    # self.left.data = self.data - 1
-    # self.right.data = self.data + 1
-    
-    #  >>> tree6.data
-    # 4
-    # >>> tree6.left.data
-    # 2
-    # >>> tree6.left.left.data
-    # 1
-    # >>> tree6.left.right.data
-    # 3
-    # >>> tree6.right.data
-    # 6
-    # >>> tree6.right.left.data
-    # 5
-    #if length is even, self.data = len/2 + 1 => [1, 2, 3, 4, 5, 6] len/2 = 3 + 1
-    
-    
-    
 
 
 
